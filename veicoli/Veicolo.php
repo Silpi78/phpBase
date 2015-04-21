@@ -5,56 +5,79 @@
 	 * Classe principale che descrive un Veicolo 
 	 */
 	class Veicolo{
-		/**
-		 * variabili istanza
-		 * @var object Proprietario
-		 * @var	string telaio 
-		 * @var string colore
-		 */
-		protected $Proprietario; // proprietario del veicolo
-		private $telaio; //numero del telaio non può essere modificato ma solo visualizzato
-		protected $colore; // colore del veicolo
 		
 		/**
-		 * @param object $Proprietario
-		 * @param string $telaio
+		 * variabili istanza
+		 * @var number telaio Un intero composto da 10 cifre
+		 * @var int codveicolo Il codice del veicolo che indica il tipo di categoria del veicolo
+		 * @var string dimensioni Lunghezza, larghezza e altezza del veicolo
+		 * @var string colore
+		 */
+		
+		protected $telaio;
+		protected $codVeicolo;
+		protected $dimensioni;
+		protected $colore;
+		
+		
+		/**
+		 * @param int $telaio
+		 * @param int $codveicolo
+		 * @param string $dimensioni
 		 * @param string $colore
 		 */
 		
-		public function __construct($Proprietario,$telaio,$colore){
-			$this->Proprietario =$Proprietario;
+		public function __construct($telaio,$codVeicolo,$dimensioni,$colore){
+			
 			$this->telaio=$telaio;
+			$this->codVeicolo=$codVeicolo;
+			$this->dimensioni=$dimensioni;
 			$this->colore=$colore;										
 		}
-		
-		/**
-		 * @return object Restituisce oggetto Proprietario con i dati 
-		 */
-		public function getProprietario(){
-			return $this->Proprietario;
-		}
-					
-		/**
-		 * @param object $Proprietario Modifica il proprietario
-		 */
-		public function setProprietario($Proprietario){
-				$this->Proprietario=$Proprietario;		
-		}
+				
 				
 		/**
-		 * @return string ritorna il numero di telaio della macchina
+		 * @return int Restituisce il numero di telaio del veicolo
 		 */
 		public function getTelaio(){
 			return $this->telaio;
 		}
 
 		/**
-		 * @param string $telaio
+		 * @param int $telaio Modifica il numero del telaio
 		 */
-		private function setTelaio($telaio) {
+		public function setTelaio($telaio) {
 			$this->telaio=$telaio;
 		}
 		
+		/**
+		 * @return int cod Restituisce il codice del veicolo
+		 */
+		public function getcodVeicolo(){
+			return $this->codVeicolo;
+		}
+		
+		/**
+		 * @param int $codVeicolo Modifica il codice del veicolo
+		 */
+		public function setcodVeicolo($codVeicolo){
+			$this->codVeicolo=$codVeicolo;
+		}
+		
+		/**
+		 * @return string Restituisce le dimensioni del veicolo
+		 */
+		public function getDimensioni(){
+			return $this->dimensioni;
+		}
+		
+		/**
+		 * @param string $dimensioni Modifica le dimensioni del veicolo
+		 */
+		public function setDimensioni($dimensioni){
+			$this->dimensioni=$dimensioni;
+		}
+			
 		/**
 		 * @return string Restituisce il colore del veicolo
 		 */
@@ -68,21 +91,14 @@
 		public function setColore($colore){
 			$this->colore=$colore;
 		}
-		
+				
 		/**
-		 * @return string Restituisce i dati del veicolo:Proprietario,Telaio e Colore
+		 * @return string Restituisce i dati del veicolo:Telaio,codVeicolo,dimensioni e colore
 		 */
-		public function veicoloToString() {
-			return $this->Proprietario->toString()."Dati Veicolo:<br /> "."Telaio: ".$this->getTelaio()."<br />"."Colore: ".$this->getColore()."<br />";
+		public function toString() {
+			return "Dati Veicolo:<br /> "."Telaio: ".$this->getTelaio()."<br />"."Codice Veicolo: ".$this->getcodVeicolo()."<br />"."Dimensioni: ".$this->getDimensioni()."<br />"."Colore: ".$this->getColore()."<br />";
 		}
 		
-		/**
-		 * @param string $nuovotelaio Chiama il metodo privato setTelaio e modifica il numero di telaio
-		 */
-		public function modificaTelaio($nuovotelaio){
-			$this->setTelaio($nuovotelaio);
-		}
 	}
-			
-	require_once 'Proprietario.php';
+	require_once "Proprietario.php";
 ?>

@@ -1,22 +1,59 @@
 <?php
 require_once 'Proprietario.php';
 require_once 'Veicolo.php';
-require_once 'VeicoloMotore.php';
-//Classe per visualizzare il funzionamento delle altre classi
+//Classe per visualizzare il funzionamento delle classi
 
-$prop = new Proprietario ( "Antonio", "Verdi", "via tremonti 9 Bari", "case@yahoo.it","06335734");
-//print $prop->toString(); 
-$veic=new Veicolo($prop, "q97c432sd", "marrone");
-//print $veic->getProprietario()->toString()."<br />";
+//testo la classe Proprietario provando i vari metodi get e set
+$prop = new Proprietario(1,'Mario','Rossi','via Dante 45', 'Modena','mariorossi@gmail.com','09382374');
+print $prop->getidProprietario()."<br />";
+$prop->setidProprietario(20);
+print $prop->getidProprietario()."<br />";
 
-//print $veic->veicoloToString();
-//$veic->setColore("verde");
-//print $veic->getColore();
-//$prop2=new Proprietario("Mario", "Bianchi", "via Cattaneo 32 Vicenza", "mansdasd@yahoo.it", "023889323");
-$veicoloMotore= new VeicoloMotore($prop, "AZ879034", "giallo", "Ah234zx", "1200", "benzina");
-$dati= $veicoloMotore->veicoloMotoreToString();
-print $dati;
-$veicoloMotore->modificaTelaio("azncer223k");
-print $veicoloMotore->getTelaio();
+print $prop->getNome()."<br />";
+$prop->setNome('Carlo');
+print $prop->getNome()."<br />";
+
+print $prop->getCognome()."<br />";
+$prop->setCognome('Bianchi');
+print $prop->getCognome()."<br />";
+
+print $prop->getIndirizzo()."<br />";
+$prop->setIndirizzo('via Parini 95');
+print $prop->getIndirizzo()."<br />";
+
+print $prop->getCitta()."<br />";
+$prop->setCitta('Torino');
+print $prop->getCitta()."<br />";
+
+print $prop->getEmail()."<br />";
+$prop->setEmail('carlobianchi@yahoo.it');
+print $prop->getEmail()."<br />";
+
+print $prop->getTelefono()."<br />";
+$prop->setTelefono('035892642');
+print $prop->getTelefono()."<br />";
+//stampo tutti dati dell'oggetto
+print $prop->toString();
+
+ 
+//test della classe veicolo
+$veicolo = new Veicolo(0000000001,1,'300x120x150','nero');
+print $veicolo->getTelaio()."<br />";
+$veicolo->setTelaio('0000000002');
+print $veicolo->getTelaio()."<br />";
+
+print $veicolo->getcodVeicolo()."<br />";
+$veicolo->setcodVeicolo(20);
+print $veicolo->getcodVeicolo()."<br />";
+
+print $veicolo->getDimensioni()."<br />";
+$veicolo->setDimensioni('330x140x120');
+print $veicolo->getDimensioni()."<br />";
+
+print $veicolo->getColore()."<br />";
+$veicolo->setColore('verde');
+print $veicolo->getColore()."<br />";
+//stampo tutti dati dell'oggetto
+print $veicolo->toString();
 
 ?>

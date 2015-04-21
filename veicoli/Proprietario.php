@@ -1,12 +1,13 @@
 <?php
 /**
  * @author Silvio
- * Classe Proprietario 
+ * Classe Proprietario Descrive una pers
  */
 class Proprietario {
 	
 	/**
 	 * Variabili istanza della classe 
+	 * @var number idProprietario
 	 * @var string nome
 	 * @var string cognome
 	 * @var string indirizzo
@@ -15,6 +16,7 @@ class Proprietario {
 	 * @var string telefono
 	 * 
 	 */
+	private $idProprietario;
 	private $nome;
 	private $cognome;
 	private $indirizzo;
@@ -30,7 +32,8 @@ class Proprietario {
 	 * @param string $email
 	 * @param string $telefono
 	 */
-	public function __construct($nome, $cognome, $indirizzo, $citta, $email, $telefono) {
+	public function __construct($idProprietario,$nome, $cognome, $indirizzo, $citta, $email, $telefono) {
+		$this->idProprietario= $idProprietario;
 		$this->nome = $nome;
 		$this->cognome = $cognome;
 		$this->indirizzo = $indirizzo;
@@ -38,6 +41,20 @@ class Proprietario {
 		$this->email = $email;
 		$this->telefono = $telefono;
 		
+	}
+	
+	/**
+	 * @return int Restituisce idProprietario
+	 */
+	public function getidProprietario(){
+		return $this->idProprietario;
+	}
+	
+	/**
+	 * @param int $idProprieatario Modifica id del Proprietario
+	 */
+	public function setidProprietario($idProprieatario){
+		$this->idProprietario=$idProprieatario;
 	}
 	
 	/**
@@ -128,7 +145,7 @@ class Proprietario {
 	 * @return string Restituisce tutti i dati dell'oggetto Proprietario
 	 */
 	public function toString(){
-		return "Dati Proprietario<br />Nome: ".$this->getNome()."<br />"."Cognome: ".$this->getCognome()."<br />"."Indirizzo: ".$this->getIndirizzo()."<br />"."Email: ".$this->getEmail()."<br />"."Città: ".$this->getCitta()."<br />"."Telefono: " .$this->getTelefono()."<br />";
+		return "Dati Proprietario<br />ID :".$this->getidProprietario()."<br />"."Nome: ".$this->getNome()."<br />"."Cognome: ".$this->getCognome()."<br />"."Indirizzo: ".$this->getIndirizzo()."<br />"."Email: ".$this->getEmail()."<br />"."Città: ".$this->getCitta()."<br />"."Telefono: " .$this->getTelefono()."<br />";
 		
 	}
 }
