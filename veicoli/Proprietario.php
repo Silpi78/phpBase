@@ -9,13 +9,16 @@ class Proprietario {
 	 * Variabili istanza della classe 
 	 * @var string nome
 	 * @var string cognome
-	 * @var string indirizzo 
+	 * @var string indirizzo
+	 * @var string citta 
 	 * @var string email
 	 * @var string telefono
+	 * 
 	 */
 	private $nome;
 	private $cognome;
 	private $indirizzo;
+	private $citta;
 	private $email;
 	private $telefono;
 	
@@ -27,12 +30,14 @@ class Proprietario {
 	 * @param string $email
 	 * @param string $telefono
 	 */
-	public function __construct($nome, $cognome, $indirizzo, $email, $telefono) {
+	public function __construct($nome, $cognome, $indirizzo, $citta, $email, $telefono) {
 		$this->nome = $nome;
 		$this->cognome = $cognome;
 		$this->indirizzo = $indirizzo;
+		$this->citta=$citta;
 		$this->email = $email;
 		$this->telefono = $telefono;
+		
 	}
 	
 	/**
@@ -71,10 +76,24 @@ class Proprietario {
 	}
 	
 	/**
-	 * @param string $indirizzo Modifica l'indirizzo del proprietario(via n° città)
+	 * @param string $indirizzo Modifica l'indirizzo del proprietario
 	 */
 	public function setIndirizzo($indirizzo) {
 		$this->indirizzo=$indirizzo;
+	}
+	
+	/**
+	 *  @return string Restituisce il nome della città
+	 */
+	public function getCitta(){
+		return $this->citta;
+	}
+	
+	/**
+	 * @param string $citta Modifica il nome della città
+	 */
+	public function setCitta($citta){
+		$this->citta=$citta;
 	}
 	
 	/**
@@ -109,7 +128,7 @@ class Proprietario {
 	 * @return string Restituisce tutti i dati dell'oggetto Proprietario
 	 */
 	public function toString(){
-		return "Dati Proprietario<br />Nome: ".$this->getNome()."<br />"."Cognome: ".$this->getCognome()."<br />"."Indirizzo: ".$this->getIndirizzo()."<br />"."Email: ".$this->getEmail()."<br />"."Telefono: ".$this->getTelefono()."<br />";
+		return "Dati Proprietario<br />Nome: ".$this->getNome()."<br />"."Cognome: ".$this->getCognome()."<br />"."Indirizzo: ".$this->getIndirizzo()."<br />"."Email: ".$this->getEmail()."<br />"."Città: ".$this->getCitta()."<br />"."Telefono: " .$this->getTelefono()."<br />";
 		
 	}
 }
