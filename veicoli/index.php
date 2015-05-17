@@ -1,9 +1,13 @@
 <?php
 require_once 'Proprietario.php';
 require_once 'Veicolo.php';
+require_once 'Database.php';
+require_once 'Dbinfo.inc';
+
 //Classe per visualizzare il funzionamento delle classi
 
 //testo la classe Proprietario provando i vari metodi get e set
+/*
 $prop = new Proprietario(1,'Mario','Rossi','via Dante 45', 'Modena','mariorossi@gmail.com','09382374');
 print $prop->getidProprietario()."<br />";
 $prop->setidProprietario(20);
@@ -55,5 +59,25 @@ $veicolo->setColore('verde');
 print $veicolo->getColore()."<br />";
 //stampo tutti dati dell'oggetto
 print $veicolo->toString();
+*/
 
+$db= new Database();
+//$con=$db->openCon();
+//var_dump($db);
+$con=$db->connetti();
+//var_dump($con)."<br />";
+$risultati=$db->eseguiQuery("SELECT * from veicolo");
+//var_dump($risultati)."<br>";
+
+while($row = $risultati->fetch_array())
+{
+	$rows[] = $row;
+}
+
+echo "Telaio "."Dimensioni "."Colore "."<br>";
+foreach($rows as $row){
+	echo $row['telaio']." ";
+	echo $row['dimensioni']." ";
+	echo $row['colore']."<br>";
+}
 ?>
