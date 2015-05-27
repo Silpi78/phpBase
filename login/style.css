@@ -1,0 +1,65 @@
+
+ul{
+	list-style-type:none;
+	margin:0;
+	padding:0;
+	} // tolgo i puntini da ul
+	
+li{
+	display:inline;
+		
+}
+.left{
+	float:left;
+	width:80%;
+}
+
+.right{
+	float:right;
+	width:20%;
+}
+
+form{
+	width:300px;
+	
+}
+label{
+	font:bold 14px verdana,georgia,new times roman;
+}
+
+input{
+	margin-left:20px;
+	border-radius:3px;
+	moz-border-radius:3px;
+	webkit-border-radius:3px;
+	box-shadow:1px 2px 2px #dedede inset;
+float:right;
+border:none;
+}
+.iscrizione{
+	border-radius:8px;
+	moz-border-radius:8px;
+	webkit-border-radius:8px;
+	background-color:#00ccff;
+	font:normal 22px verdana, georgia;
+	color:#fff;
+	float:left;
+}
+
+fieldset{
+	border-radius:8px;
+	moz-border-radius:8px;
+	webkit-border-radius:8px;
+	border-color:#00ccff;
+	border-width:5px;
+	border-style:solid;
+	box-shadow:5px 5px 5px #dedede;
+	moz-box-shadow:5px 5px 5px #dedede;
+	webkit-box-shadow:5px 5px 5px #dedede;
+}
+
+h3{
+		text-align:center;
+		
+	}
+	
